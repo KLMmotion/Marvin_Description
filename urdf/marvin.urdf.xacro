@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+  marvin.urdf.xacro
+  Top-level entry point for the Marvin robot description.
+
+  Arguments
+  =========
+  use_sim_time  (default: false)  Set to true when running inside a simulator.
+  namespace     (default: "")     Optional TF frame prefix (e.g. "robot1").
+-->
+<robot name="marvin" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ================================================================
+       Arguments
+       ================================================================ -->
+  <xacro:arg name="use_sim_time" default="false"/>
+  <xacro:arg name="namespace"    default=""/>
+
+  <!-- ================================================================
+       Properties
+       ================================================================ -->
+  <xacro:property name="ns" value="$(arg namespace)"/>
+
+  <!-- ================================================================
+       Include sub-files
+       ================================================================ -->
+  <xacro:include filename="$(find marvin_description)/urdf/marvin_base.urdf.xacro"/>
+  <xacro:include filename="$(find marvin_description)/urdf/sensors.urdf.xacro"/>
+
+  <!-- ================================================================
+       Instantiate macros
+       ================================================================ -->
+  <xacro:marvin_base namespace="${ns}"/>
+  <xacro:marvin_sensors namespace="${ns}" parent_link="${ns}base_link"/>
+
+</robot>

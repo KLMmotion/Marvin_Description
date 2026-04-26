@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!--
+  sensors.urdf.xacro
+  Sensor frames for the Marvin robot:
+    - 2-D LiDAR  (front-centre of chassis top)
+    - RGB-D camera (front-facing, above LiDAR)
+    - IMU          (chassis centre)
+
+  Macro
+  =====
+  marvin_sensors(namespace, parent_link)
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ================================================================
+       Properties
+       ================================================================ -->
+  <xacro:property name="lidar_height"  value="0.215"/> <!-- m above base_link origin -->
+  <xacro:property name="camera_height" value="0.300"/>
+  <xacro:property name="camera_x"      value="0.250"/>
+
+  <!-- ================================================================
+       Sensor macro
+       ================================================================ -->
+  <xacro:macro name="marvin_sensors" params="namespace parent_link">
+
+    <!-- ── LiDAR ─────────────────────────────────────────────── -->
+    <link name="${namespace}laser_frame">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.035" length="0.060"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0.1 0.1 0.1 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.035" length="0.060"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.18"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0"
+                 iyy="0.0001" iyz="0"
+                 izz="0.0001"/>
+      </inertial>
+    </link>
+
+    <joint name="${namespace}laser_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child  link="${namespace}laser_frame"/>
+      <origin xyz="0.0 0.0 ${lidar_height}" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ── RGB-D Camera ──────────────────────────────────────── -->
+    <link name="${namespace}camera_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.030 0.090 0.025"/>
+        </geometry>
+        <material name="dark_blue">
+          <color rgba="0.0 0.0 0.5 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.030 0.090 0.025"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.07"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0"
+                 iyy="0.0001" iyz="0"
+                 izz="0.0001"/>
+      </inertial>
+    </link>
+
+    <joint name="${namespace}camera_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child  link="${namespace}camera_link"/>
+      <origin xyz="${camera_x} 0.0 ${camera_height}" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Optical frame – standard ROS image convention: Z forward, X right, Y down.
+         The rpy="${-pi/2} 0 ${-pi/2}" transform rotates the child frame so that
+         its +Z axis aligns with the parent +X (forward), its +X with the parent
+         -Y (right), and its +Y with the parent -Z (down). -->
+    <link name="${namespace}camera_optical_frame"/>
+
+    <joint name="${namespace}camera_optical_joint" type="fixed">
+      <parent link="${namespace}camera_link"/>
+      <child  link="${namespace}camera_optical_frame"/>
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+    </joint>
+
+    <!-- ── IMU ───────────────────────────────────────────────── -->
+    <link name="${namespace}imu_link">
+      <inertial>
+        <mass value="0.02"/>
+        <inertia ixx="0.00001" ixy="0" ixz="0"
+                 iyy="0.00001" iyz="0"
+                 izz="0.00001"/>
+      </inertial>
+    </link>
+
+    <joint name="${namespace}imu_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child  link="${namespace}imu_link"/>
+      <origin xyz="0.0 0.0 0.10" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

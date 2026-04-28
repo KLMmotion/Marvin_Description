@@ -76,6 +76,7 @@
     <exclude body1="Leg_J1_Link" body2="Leg_J2_Link" />
     <exclude body1="Leg_J2_Link" body2="Leg_J3_Link" />
     <exclude body1="Leg_J3_Link" body2="Leg_J4_Link" />
+    <exclude body1="Leg_J3_Link" body2="Leg_J5_Link" />
     <exclude body1="Leg_J4_Link" body2="Leg_J5_Link" />
     <exclude body1="Leg_J5_Link" body2="Leg_J6_Link" />
     <exclude body1="Leg_J6_Link" body2="Arm_R1_Link" />

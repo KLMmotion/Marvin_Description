@@ -236,7 +236,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/base_link.STL" />
+          <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/omnigripper_straight.STL" />
       </geometry>
       <material name="left_gripper_base_mat">
         <color rgba="0.79216078 0.81961176 0.92941569 1.00000000"/>
@@ -245,7 +245,7 @@
     <collision name="left_gripper_base_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/base_link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/omnigripper_straight.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -259,7 +259,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Chipper_Base.STL" />
       </geometry>
       <material name="left_gripper_left_finger_mat">
         <color rgba="0.60392549 0.60392549 0.60392549 1.00000000"/>
@@ -268,7 +268,7 @@
     <collision name="left_gripper_left_finger_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Chipper_Base.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -282,7 +282,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Chipper_Base.STL" />
       </geometry>
       <material name="left_gripper_right_finger_mat">
         <color rgba="0.60392549 0.60392549 0.60392549 1.00000000"/>
@@ -291,7 +291,7 @@
     <collision name="left_gripper_right_finger_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Chipper_Base.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -513,7 +513,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/base_link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/omnigripper_straight.STL" />
       </geometry>
       <material name="right_gripper_base_mat">
         <color rgba="0.79216078 0.81961176 0.92941569 1.00000000"/>
@@ -522,7 +522,7 @@
     <collision name="right_gripper_base_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/base_link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/omnigripper_straight.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -536,7 +536,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Chipper_Base.STL" />
       </geometry>
       <material name="right_gripper_left_finger_mat">
         <color rgba="0.60392549 0.60392549 0.60392549 1.00000000"/>
@@ -545,7 +545,7 @@
     <collision name="right_gripper_left_finger_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Left_Chipper_Base.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -559,7 +559,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Chipper_Base.STL" />
       </geometry>
       <material name="right_gripper_right_finger_mat">
         <color rgba="0.60392549 0.60392549 0.60392549 1.00000000"/>
@@ -568,7 +568,7 @@
     <collision name="right_gripper_right_finger_geom_1">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Finger_Link.STL" />
+        <mesh filename="../../meshes/marvin_pro/meshes/omnigripper/Right_Chipper_Base.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -682,7 +682,7 @@
   <joint name="left_gripper_left_finger_joint" type="prismatic">
     <parent link="left_gripper_base" />
     <child link="left_gripper_left_finger" />
-    <origin xyz="0.0516878 -0.0421084 0.0916374" rpy="0.7853982 0 -3.1283863" />
+    <origin xyz="0.105 -0.0101084 0.0956374" rpy="1.5708 0 3.1416" />
     <axis xyz="1 0 0" />
     <limit lower="0" upper="0.05" effort="30" velocity="0" />
     <dynamics damping="8" friction="0.2" />
@@ -691,7 +691,7 @@
   <joint name="left_gripper_right_finger_joint" type="prismatic">
     <parent link="left_gripper_base" />
     <child link="left_gripper_right_finger" />
-    <origin xyz="-0.07508 -0.0261034 0.1093149" rpy="2.3561945 0.0000001 0.0132065" />
+    <origin xyz="-0.05 0.0015034 0.1135" rpy="1.5708 0 0" />
     <axis xyz="1 0 0" />
     <limit lower="0" upper="0.05" effort="0" velocity="0" />
     <dynamics damping="8" friction="0.2" />
@@ -794,7 +794,7 @@
   <joint name="right_gripper_left_finger_joint" type="prismatic">
     <parent link="right_gripper_base" />
     <child link="right_gripper_left_finger" />
-    <origin xyz="0.0516878 -0.0421084 0.0916374" rpy="0.7853982 0 -3.1283863" />
+    <origin xyz="0.105 -0.0101084 0.0956374" rpy="1.5708 0 3.1416" />
     <axis xyz="1 0 0" />
     <limit lower="0" upper="0.05" effort="30" velocity="0" />
     <dynamics damping="8" friction="0.2" />
@@ -803,7 +803,7 @@
   <joint name="right_gripper_right_finger_joint" type="prismatic">
     <parent link="right_gripper_base" />
     <child link="right_gripper_right_finger" />
-    <origin xyz="-0.07508 -0.0261034 0.1093149" rpy="2.3561945 0.0000001 0.0132065" />
+    <origin xyz="-0.05 0.0015034 0.1135" rpy="1.5708 0 0" />
     <axis xyz="1 0 0" />
     <limit lower="0" upper="0.05" effort="0" velocity="0" />
     <dynamics damping="8" friction="0.2" />

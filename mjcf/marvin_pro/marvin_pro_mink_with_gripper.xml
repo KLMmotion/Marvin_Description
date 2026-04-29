@@ -40,12 +40,12 @@
     <mesh name="Arm_R6_Link" content_type="model/stl" file="../../meshes/marvin_pro/meshes/m6/Arm_R6_Link.STL"/>
     <mesh name="Arm_R7_Link" content_type="model/stl" file="../../meshes/marvin_pro/meshes/m6/Arm_R7_Link.STL"/>
     <mesh name="ZJ_Robot_link" content_type="model/stl" file="../../meshes/marvin_pro/meshes/base/ZJ_Robot_link.STL"/>
-    <mesh name="left_gripper_base_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/base_link.STL"/>
-    <mesh name="left_gripper_left_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Left_Finger_Link.STL"/>
-    <mesh name="left_gripper_right_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Right_Finger_Link.STL"/>
-    <mesh name="right_gripper_base_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/base_link.STL"/>
-    <mesh name="right_gripper_left_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Left_Finger_Link.STL"/>
-    <mesh name="right_gripper_right_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Right_Finger_Link.STL"/>
+      <mesh name="left_gripper_base_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/omnigripper_straight.STL"/>
+      <mesh name="left_gripper_left_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Left_Chipper_Base.STL"/>
+      <mesh name="left_gripper_right_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Right_Chipper_Base.STL"/>
+      <mesh name="right_gripper_base_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/omnigripper_straight.STL"/>
+      <mesh name="right_gripper_left_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Left_Chipper_Base.STL"/>
+      <mesh name="right_gripper_right_finger_mesh" content_type="model/stl" file="../../meshes/marvin_pro/meshes/omnigripper/Right_Chipper_Base.STL"/>
     <material name="gripper_base_mat" rgba="0.7922 0.8196 0.9294 1" specular="0"/>
     <material name="gripper_finger_mat" rgba="0.6039 0.6039 0.6039 1" specular="0"/>
   </asset>
@@ -137,13 +137,13 @@
                             <geom group="2" type="mesh" contype="0" conaffinity="0" material="gripper_base_mat" mesh="left_gripper_base_mesh"/>
                             <geom group="3" type="mesh" rgba="0.9373 0.2667 0.2667 1" contype="1" conaffinity="1" condim="4" friction="0.8 0.05 0.01" mesh="left_gripper_base_mesh"/>
                             <camera name="left_wrist_camera" pos="0.01 0.01 0.115" xyaxes="-1 0 0 0 0.7 0.866" fovy="105"/>
-                            <body name="left_gripper_left_finger" pos="0.0516878 -0.0421084 0.0916374" quat="0.0061005 0.0025269 -0.3826751 -0.9238594">
+                            <body name="left_gripper_left_finger" pos="0.105 -0.01 0.0916374" quat="0.0061005 0.0025269 -0.3826751 -0.38">
                               <joint name="left_gripper_left_finger_joint" type="slide" axis="1 0 0" limited="true" range="0 0.05" damping="8" armature="0.01" frictionloss="0.2"/>
                               <inertial pos="-0.0166753 -0.0028108 0.0127051" mass="0.031395" fullinertia="0.0000116 0.0000048 0.0000102 -0.0000013 0 0"/>
                               <geom group="2" type="mesh" contype="0" conaffinity="0" material="gripper_finger_mat" mesh="left_gripper_left_finger_mesh"/>
                               <geom group="3" type="mesh" rgba="0.9373 0.2667 0.2667 1" contype="1" conaffinity="1" condim="4" friction="0.8 0.05 0.01" mesh="left_gripper_left_finger_mesh"/>
                             </body>
-                            <body name="left_gripper_right_finger" pos="-0.07508 -0.0261034 0.1093149" quat="0.3826751 0.9238594 0.0061006 0.0025269">
+                            <body name="left_gripper_right_finger" pos="-0.05 -0.002 0.1105" quat="0.3826751 0.37 0.0061006 0.0025269">
                               <joint name="left_gripper_right_finger_joint" type="slide" axis="1 0 0" limited="true" range="0 0.05" damping="8" armature="0.01" frictionloss="0.2"/>
                               <inertial pos="0.0089293 -0.0028108 0.0127051" mass="0.031395" fullinertia="0.0000116 0.0000048 0.0000102 -0.0000013 0 0"/>
                               <geom group="2" type="mesh" contype="0" conaffinity="0" material="gripper_finger_mat" mesh="left_gripper_right_finger_mesh"/>
@@ -209,13 +209,13 @@
                             <geom group="2" type="mesh" contype="0" conaffinity="0" material="gripper_base_mat" mesh="right_gripper_base_mesh"/>
                             <geom group="3" type="mesh" rgba="0.9373 0.2667 0.2667 1" contype="1" conaffinity="1" condim="4" friction="0.8 0.05 0.01" mesh="right_gripper_base_mesh"/>
                             <camera name="right_wrist_camera" pos="0.01 0.01 0.115" xyaxes="-1 0 0 0 0.7 0.866" fovy="105"/>
-                            <body name="right_gripper_left_finger" pos="0.0516878 -0.0421084 0.0916374" quat="0.0061005 0.0025269 -0.3826751 -0.9238594">
+                            <body name="right_gripper_left_finger" pos="0.105 -0.01 0.0916374" quat="0.0061005 0.0025269 -0.3826751 -0.38">
                               <joint name="right_gripper_left_finger_joint" type="slide" axis="1 0 0" limited="true" range="0 0.05" damping="8" armature="0.01" frictionloss="0.2"/>
                               <inertial pos="-0.0166753 -0.0028108 0.0127051" mass="0.031395" fullinertia="0.0000116 0.0000048 0.0000102 -0.0000013 0 0"/>
                               <geom group="2" type="mesh" contype="0" conaffinity="0" material="gripper_finger_mat" mesh="right_gripper_left_finger_mesh"/>
                               <geom group="3" type="mesh" rgba="0.9373 0.2667 0.2667 1" contype="1" conaffinity="1" condim="4" friction="0.8 0.05 0.01" mesh="right_gripper_left_finger_mesh"/>
                             </body>
-                            <body name="right_gripper_right_finger" pos="-0.07508 -0.0261034 0.1093149" quat="0.3826751 0.9238594 0.0061006 0.0025269">
+                            <body name="right_gripper_right_finger" pos="-0.05 -0.002 0.1105" quat="0.3826751 0.37 0.0061006 0.0025269">
                               <joint name="right_gripper_right_finger_joint" type="slide" axis="1 0 0" limited="true" range="0 0.05" damping="8" armature="0.01" frictionloss="0.2"/>
                               <inertial pos="0.0089293 -0.0028108 0.0127051" mass="0.031395" fullinertia="0.0000116 0.0000048 0.0000102 -0.0000013 0 0"/>
                               <geom group="2" type="mesh" contype="0" conaffinity="0" material="gripper_finger_mat" mesh="right_gripper_right_finger_mesh"/>

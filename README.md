@@ -1,80 +1,58 @@
 # Robot Description
 
-This repository contains robot description assets for simulation and visualization.
+Robot description assets for three robots: Gento Luna, Gento Skye, and marvin_pro.
 
-Included robot models:
+This repository contains URDF files, MuJoCo MJCF files, and STL meshes for visualization, simulation, and robot model conversion workflows.
 
-- Gento Luna
-- marvin_pro
-
-The repository provides URDF files, MJCF files, and STL meshes that can be used with ROS-related tools, MuJoCo, and other robot model workflows.
-
-## Repository Structure
+## Structure
 
 ```text
 Robot_Description/
-├─ meshes/
-│  ├─ Gento Luna/
-│  │  └─ meshes/
-│  └─ marvin_pro/
-│     └─ meshes/
-│        ├─ base/
-│        ├─ m3/
-│        ├─ m6/
-│        ├─ omnigripper/
-│        └─ SRS/
-├─ mjcf/
-│  ├─ Gento Luna/
-│  │  └─ Gento Luna.xml
-│  └─ marvin_pro/
-│     └─ marvin_pro_mink_with_gripper.xml
-└─ urdf/
-   ├─ Gento Luna/
-   │  └─ Gento Luna_URDF.urdf
-   └─ marvin_pro/
-      └─ marvin_robot.urdf
++-- urdf/      # URDF robot models
++-- mjcf/      # MuJoCo MJCF robot models
++-- meshes/    # STL mesh assets
 ```
 
-## Models
+## Robots
 
 ### Gento Luna
 
 - URDF: `urdf/Gento Luna/Gento Luna_URDF.urdf`
 - MJCF: `mjcf/Gento Luna/Gento Luna.xml`
-- Meshes: `meshes/Gento Luna/meshes/*.STL`
+- Meshes: `meshes/Gento Luna/meshes/`
 
-This model includes the base, leg chain, dual arms, and head links.
+### Gento Skye
+
+- URDF: `urdf/Gento Skye/Gento Skye_URDF.urdf`
+- MJCF: `mjcf/Gento Skye/Gento_Skye_URDF.xml`
+- Meshes: `meshes/Gento Skye/meshes/`
 
 ### marvin_pro
 
-- URDF: `urdf/marvin_pro/marvin_robot.urdf`
-- MJCF: `mjcf/marvin_pro/marvin_pro_mink_with_gripper.xml`
-- Meshes: `meshes/marvin_pro/meshes/`
+URDF:
 
-This model includes a base, dual arms, and gripper-related assets.
+- No gripper: `urdf/marvin_pro/marvin_robot.urdf`
+- Parallel gripper: `urdf/marvin_pro/marvin_pro_mink_with_gripper.urdf`
+- 45-degree downward gripper: `urdf/marvin_pro/marvin_pro_mink_with_45gripper.urdf`
 
-## File Types
+MJCF:
 
-- URDF: robot structure, joints, inertial data, and mesh references
-- MJCF: MuJoCo simulation models and assets
-- STL meshes: geometry for visual and collision use
+- No gripper: `mjcf/marvin_pro/marvin_pro_mink.xml`
+- Parallel gripper: `mjcf/marvin_pro/marvin_pro_mink_with_gripper.xml`
+- 45-degree downward gripper: `mjcf/marvin_pro/marvin_pro_mink_with_45gripper.xml`
 
-## Usage
+Meshes:
 
-Use the URDF files with ROS or any URDF-compatible viewer:
-
-- `urdf/Gento Luna/Gento Luna_URDF.urdf`
-- `urdf/marvin_pro/marvin_robot.urdf`
-
-Use the MJCF files with MuJoCo-compatible tools:
-
-- `mjcf/Gento Luna/Gento Luna.xml`
-- `mjcf/marvin_pro/marvin_pro_mink_with_gripper.xml`
-
-Keep the current folder structure unchanged, because the URDF and MJCF files use relative mesh paths.
+- `meshes/marvin_pro/meshes/base/`
+- `meshes/marvin_pro/meshes/m3/`
+- `meshes/marvin_pro/meshes/m6/`
+- `meshes/marvin_pro/meshes/omnigripper/`
+- `meshes/marvin_pro/meshes/45omnigripper/`
+- `meshes/marvin_pro/meshes/SRS/`
 
 ## Notes
 
-- Mesh references are relative.
-- File names keep the original naming style, including spaces and uppercase `.STL` extensions.
-- This repository contains description assets only, not controllers or full simulation projects.
+- URDF files can be used with ROS, RViz, and URDF-compatible viewers.
+- MJCF files can be used with MuJoCo.
+- Mesh paths are relative, so keep the repository structure unchanged.
+- This repository contains robot description assets only. It does not include controllers, launch files, or complete simulation projects.
